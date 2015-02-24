@@ -1,10 +1,10 @@
 <?php
 
 //
-// Copyright (C) 2010 Computing Department BMC, 
+// Copyright (C) 2010-2012 Computing Department BMC,
 // Uppsala Biomedical Centre, Uppsala University.
 // 
-// File:   include/ui/HtmlObjectLibrary.inc
+// File:   include/html.inc
 // Author: Anders Lövgren
 // Date:   2010-05-30
 //
@@ -46,7 +46,7 @@
  *
  * Using defined contants instead of string helps to detect misspelled event
  * attributes that would be silently ignored by browers.
- *
+ * 
  * Event handlers:
  * ----------------------
  * 
@@ -328,9 +328,10 @@ if (!defined('EVENT_HANDLER_CONFIRM_DELETE')) {
 if (!defined('EVENT_HANDLER_CANCEL_BUBBLE')) {  // Stop event propagation
         define('EVENT_HANDLER_CANCEL_BUBBLE', "javascript:this.cancelBubble = true; event.stopPropagation();");
 }
-if(!defined('EVENT_HANDLER_CHECK_EMPTY')) {
+if (!defined('EVENT_HANDLER_CHECK_EMPTY')) {
         define('EVENT_HANDLER_CHECK_EMPTY', sprintf("return check_form(this, '%s');", _("This field must be filled in.")));
 }
+
 // 
 // Output mode for HTML element:
 // 
@@ -360,6 +361,50 @@ if (!defined('FORM_ACTION_DEFAULT')) {
         define('FORM_ACTION_DEFAULT', FORM_ACTION_GET);
 }
 
+// 
+// MessageBox icons URL:
+// 
+if (!defined('MESSAGEBOX_ICON_URL')) {
+        define('MESSAGEBOX_ICON_URL', '/openexam/icons');
+}
+// 
+// MessageBox standard titles:
+// 
+if (!defined('MESSAGEBOX_TITLE_HINT')) {
+        define('MESSAGEBOX_TITLE_HINT', _('Hint'));
+}
+if (!defined('MESSAGEBOX_TITLE_SUCCESS')) {
+        define('MESSAGEBOX_TITLE_SUCCESS', _('Success'));
+}
+if (!defined('MESSAGEBOX_TITLE_INFO')) {
+        define('MESSAGEBOX_TITLE_INFO', _('Information'));
+}
+if (!defined('MESSAGEBOX_TITLE_WARN')) {
+        define('MESSAGEBOX_TITLE_WARN', _('Warning'));
+}
+if (!defined('MESSAGEBOX_TITLE_ERROR')) {
+        define('MESSAGEBOX_TITLE_ERROR', _('Error'));
+}
+
+// 
+// Constants for script tag:
+// 
+if (!defined('SCRIPT_TYPE_APPLICATION_JAVASCRIPT')) {
+        define('SCRIPT_TYPE_APPLICATION_JAVASCRIPT', 'application/javascript');
+}
+if (!defined('SCRIPT_TYPE_APPLICATION_ECMASCRIPT')) {
+        define('SCRIPT_TYPE_APPLICATION_ECMASCRIPT', 'application/ecmascript');
+}
+if (!defined('SCRIPT_TYPE_TEXT_VBSCRIPT')) {
+        define('SCRIPT_TYPE_TEXT_VBSCRIPT', 'text/vbscript');
+}
+if (!defined('SCRIPT_TYPE_TEXT_JAVASCRIPT')) {          // Obsolete
+        define('SCRIPT_TYPE_TEXT_JAVASCRIPT', 'text/javascript');
+}
+if (!defined('SCRIPT_TYPE_TEXT_ECMASCRIPT')) {          // Obsolete
+        define('SCRIPT_TYPE_TEXT_ECMASCRIPT', 'text/ecmascript');
+}
+
 /**
  * This class serves as the base class for component and container classes.
  *
@@ -371,8 +416,8 @@ if (!defined('FORM_ACTION_DEFAULT')) {
 class Element
 {
 
-        private $tag;                // The tag name (i.e. h2)
         private $class;              // The classname (CSS)
+        private $tag;                // The tag name (i.e. h2)
         private $id;                 // The unique ID (CSS)
         private $style;              // Inline style
         private $title;              // The title attribute.
@@ -479,7 +524,7 @@ class Element
         protected function output($mode)
         {
                 if ($mode == ELEMENT_OUTPUT_CONTAINER_START ||
-                        $mode == ELEMENT_OUTPUT_COMPONENT) {
+                    $mode == ELEMENT_OUTPUT_COMPONENT) {
                         printf("<%s", $this->tag);
                         if (isset($this->class)) {
                                 printf(" class=\"%s\"", $this->class);
@@ -641,26 +686,35 @@ class Link extends Container
 class Cdata
 {
 
+        const separator = ' ';
+
         private $text;
         private $link;
 
         /**
          * Constructor.
-         * @param string $text The text.
+         * @param string|array $text The text.
          */
         public function __construct($text)
         {
-                $this->text = $text;
+                self::addText($text);
         }
 
         /**
          * Append text.
-         * @param string $text The text to append.
+         * @param string|array $text The text to append.
          * @param string $space Add space between this text and previous.
          */
-        public function addText($text, $space = ' ')
+        public function addText($text, $space = self::separator)
         {
-                $this->text .= $space . $text;
+                if (isset($this->text)) {
+                        $this->text .= $space;
+                }
+                if (is_array($text)) {
+                        $this->text .= implode($space, $text);
+                } else {
+                        $this->text .= $text;
+                }
         }
 
         /**
@@ -835,7 +889,7 @@ class Container extends Element
          * This function replaces any previous character data. Returns the 
          * new cdata object.
          * 
-         * @param string $text The character data.
+         * @param string|array $text The character data.
          * @return Cdata 
          */
         public function setText($text)
@@ -1177,6 +1231,73 @@ class Image extends Component
         public function setUseMap($name)
         {
                 parent::setAttr("usemap", $name);
+        }
+
+}
+
+/**
+ * This class represents an script element.
+ *
+ * @package UserInterface
+ * @subpackage HTML
+ *
+ * @author Anders Lövgren (QNET/BMC CompDept)
+ */
+class Script extends Container
+{
+
+        /**
+         * Constructor.
+         * @param string|array $text The character data.
+         */
+        public function __construct($text = null)
+        {
+                parent::__construct("script");
+                parent::setText($text);
+        }
+
+        /**
+         * Specifies that the script is executed asynchronously (only for external scripts).
+         */
+        public function setAsync()
+        {
+                parent::setAttr("async", "async");
+        }
+
+        /**
+         * Set the charset attribute.
+         * @param string $encoding The character set encoding.
+         */
+        public function setCharSet($encoding)
+        {
+                parent::setAttr("charset", $encoding);
+        }
+
+        /**
+         * Specifies that the script is executed when the page has finished 
+         * parsing (only for external scripts).
+         */
+        public function setDefer()
+        {
+                parent::setAttr("defer", "defer");
+        }
+
+        /**
+         * Sets the src attribute.
+         * @param string $src The URI.
+         */
+        public function setSource($src)
+        {
+                parent::setAttr("src", $src);
+        }
+
+        /**
+         * Set the MIME type for the script element.
+         * @param type $type The MIME type. See constants SCRIPT_TYPE_XXX or IANA registrations.
+         */
+        public function setType($type = SCRIPT_TYPE_APPLICATION_JAVASCRIPT)
+        {
+                parent::setAttr("type", $type);
         }
 
 }
@@ -1711,7 +1832,7 @@ class ImageButton extends Input
          */
         public function setAltText($text)
         {
-                parent::setAttr("alt", $alt);
+                parent::setAttr("alt", $text);
         }
 
 }
@@ -2524,7 +2645,7 @@ class TBody extends TContainer
 }
 
 /**
- * Generic HTML container.
+ * Generic HTML container. This is a convenience class.
  *
  * @package UserInterface
  * @subpackage HTML
@@ -2562,7 +2683,7 @@ class Content
 
         /**
          * Add a section of plain text.
-         * @param string $text The text.
+         * @param string|array $text The text.
          * @return Cdata
          */
         public function addText($text)
@@ -2571,8 +2692,9 @@ class Content
         }
 
         /**
-         * Add an paragraph object.
-         * @param string $text The paragraph content.
+         * Add an paragraph object. The text argument might contain an array
+         * of string that's going to be concatenated.
+         * @param string|array $text The paragraph content.
          * @return Paragraph
          */
         public function addParagraph($text)
@@ -2614,10 +2736,12 @@ class Content
 /**
  * MessageBox class.
  *
- * The message box class provides a standardized look-and-feel for end user
- * messages. The kind of messages displayed are typical error or information
- * messages. The hint type is an extension to the standard messagebox types, 
- * and is intended for display of user hints (like short usage tips).
+ * This class defines a messagebox providing an standardized look-and-feel
+ * for the displayed message. The messagebox is either used to display hinting,
+ * success, information, warnings or error messages.
+ *
+ * The hint type is an extension to the standard messagebox types, and is
+ * intended for display of user hints (like short usage tips).
  *
  * These three different use cases will all display the same messagebox:
  *
@@ -2625,8 +2749,8 @@ class Content
  * <?php
  * $title = "Greeting";
  * $text = "Hello world!";
- * $icon = "icons/info.png";
- * 
+ * $icon = "icons/custom/info.png";
+ *
  * // 
  * // Using get/set methods:
  * // 
@@ -2634,45 +2758,36 @@ class Content
  * $messagebox->setIcon($icon);
  * $messagebox->setTitle($title);
  * $messagebox->setMessage($text);
- * $messagebox->output();
+ * $messagebox->display();
  *
  * // 
  * // Pass properties to constructor:
  * // 
  * $messagebox = new MessageBox(
- *    MessageBox::information,
- *    $icon, $title, $text);
- * $messagebox->output();
- * 
+ *     MessageBox::information,
+ *     $text, $title, $icon);
+ * $messagebox->display();
+ *
  * // 
  * // Use static method:
  * // 
- * MessageBox::show(MessageBox::information, $icon, $title, $text);
+ * MessageBox::show(MessageBox::information, $text, $title, $icon);
  * ?>
  * </code>
  *
- * The HTML code that is generated by the code above looks like this:
+ * The HTML generated by code above will be:
  *
  * <code>
- * <div class="info">
- *   <h3>Greeting</h3>
- *   <img src="icons/info.png" alt=""/>
- *   Hello world!
+ * <div class="mbox info">
+ *   <div class="mbox-head"><img src="icons/custom/info.png" alt=""/>Greeting</div>
+ *   <div class="mbox-text">Hello world!</div>
  * </div>
  * </code>
  *
  * By default, the messagebox will be of information type. The type is either
  * set at construction time or later by calling setClass() on the messagebox
  * object.
- * 
- * It's worth noticing that this is a container class. Thus, other elements
- * can be added to it. Such elements will be output within the messagebox
- * container div after the mesagesbox content is displayed.
  *
- * Due to a design decision, its not possible to modify the object state (like 
- * setting a new message) after output() been called once. However, its still
- * possible to add new elements to its parent container.
- * 
  * @package UserInterface
  * @subpackage HTML
  *
@@ -2680,62 +2795,41 @@ class Content
  */
 class MessageBox extends Container
 {
+
         const hint = "hint";
         const success = "success";
         const information = "info";
         const warning = "warn";
         const error = "error";
 
-        private $type;
         private $icon;
-        private $title;
+        private $head;
         private $text;
-        private $content;
 
         /**
          * Constructor.
-         *
-         * The $type argument is one of the constants defined within this
-         * class (i.e. MessageBox::warning).
-         * 
-         * The $icon argument is either an relative path or an URL, or an Image
-         * object. If $icon is missing, then the icon type is determined from
-         * the $type argument (if using one of the constants).
-         * 
          * @param string $type Type of messagebox.
-         * @param string|Image $icon The messagebox icon.
-         * @param string $title The title text.
          * @param string $text The message string.
+         * @param string|bool $title The title text or true to use default title. Pass null to exclude title message.
+         * @param string|Image $icon The messagebox icon. Pass null to use default icon.
          */
-        public function __construct($type = self::information, $icon = null, $title = null, $text = "")
+        public function __construct($type = self::information, $text = "", $title = true, $icon = null)
         {
-                // 
-                // The main container.
-                // 
                 parent::__construct("div");
-                parent::setClass("messagebox");
+                parent::setClass(sprintf("mbox %s", $type));
 
-                // 
-                // All object defined in this class goes into content.
-                // 
-                $this->content = parent::addElement(new Div());
-                $this->content->setClass("content");
-
-                if (!isset($icon)) {
-                        $icon = sprintf("icons/nuvola/%s.png", $type);
+                if (!isset($icon)) {                    // deduce icon from type
+                        $icon = sprintf("%s/%s.png", MESSAGEBOX_ICON_URL, $type);
                 }
-
-                $this->type = $type;
-                $this->text = new Paragraph();
-                $this->title = new Span();
+                if (is_bool($title) && $title) {        // deduce title from type
+                        $title = constant(sprintf("MESSAGEBOX_TITLE_%s", strtoupper($type)));
+                }
 
                 $this->setTitle($title);
                 $this->setIcon($icon);
                 $this->setMessage($text);
 
-                $this->title->setClass("title");
-                $this->icon->setClass("icon");
-                $this->text->setClass($this->type);
+                parent::addElement($this);              // add output hook
         }
 
         /**
@@ -2745,14 +2839,14 @@ class MessageBox extends Container
          * calls display() on it.
          * 
          * @param string $type Type of messagebox.
-         * @param string|Image $icon The messagebox icon.
-         * @param string $title The title text.
          * @param string $text The message string.
+         * @param string|bool $title The title text or true to use default title. Pass null to exclude title message.
+         * @param string|Image $icon The messagebox icon. Pass null to use default icon.
          */
-        public static function show($type = self::information, $icon = null, $title = null, $text = "")
+        public static function show($type = self::information, $text = "", $title = true, $icon = null)
         {
-                $messagebox = new MessageBox($type, $icon, $title, $text);
-                $messagebox->output();
+                $messagebox = new MessageBox($type, $text, $title, $icon);
+                $messagebox->display();
         }
 
         /**
@@ -2770,11 +2864,11 @@ class MessageBox extends Container
 
         /**
          * Set the messagebox title.
-         * @param string $title The title text.
+         * @param string $title The title text or null to exclude title message.
          */
         public function setTitle($text)
         {
-                $this->title->setText($text);
+                $this->head = $text;
         }
 
         /**
@@ -2783,22 +2877,48 @@ class MessageBox extends Container
          */
         public function setMessage($text)
         {
-                $this->text->setText($text);
+                $this->text = $text;
         }
 
         /**
          * Output the messagebox.
+         *
+         * This function should not be called direct. Instead, it is solely for
+         * use by the parent class.
          */
         public function output()
         {
-                if ($this->content->count() == 0) {
-                        $this->content->addElement($this->icon);
-                        if (isset($this->title)) {
-                                $this->content->addElement($this->title);
-                        }
-                        $this->content->addElement($this->text);
+                if (is_string($this->head)) {
+                        $this->head = new Cdata($this->head);
                 }
+                if (is_string($this->text)) {
+                        $this->text = new Cdata($this->text);
+                }
+                if (isset($this->head)) {
+                        $content = new Content();
+                        $div = $content->addContent(new Container("div"));
+                        $div->setClass("mbox-head");
+                        $div->addElement($this->icon);
+                        $div->addElement($this->head);
+                        $div = $content->addContent(new Container("div"));
+                        $div->setClass("mbox-text");
+                        $div->addElement($this->text);
+                        $content->output();
+                } else {
+                        $content = new Content();
+                        $div = $content->addContent(new Container("div"));
+                        $div->setClass("mbox-text");
+                        $div->addElement($this->icon);
+                        $div->addElement($this->text);
+                        $content->output();
+                }
+        }
 
+        /**
+         * Call this function to display the messagebox.
+         */
+        public function display()
+        {
                 parent::output();
         }
 
@@ -2836,6 +2956,84 @@ class Span extends Container
         public function __construct()
         {
                 parent::__construct("span");
+        }
+
+}
+
+/**
+ * This class represents a pre container (PRE) element.
+ * 
+ * @package UserInterface
+ * @subpackage HTML
+ *
+ * @author Anders Lövgren (QNET/BMC CompDept)
+ */
+class Pre extends Container
+{
+
+        public function __construct()
+        {
+                parent::__construct("pre");
+        }
+
+}
+
+/**
+ * This class represents a code container (CODE) element.
+ * 
+ * @package UserInterface
+ * @subpackage HTML
+ *
+ * @author Anders Lövgren (QNET/BMC CompDept)
+ */
+class Code extends Container
+{
+
+        public function __construct()
+        {
+                parent::__construct("code");
+        }
+
+}
+
+/**
+ * This class represents a fieldset container element.
+ * 
+ * @package UserInterface
+ * @subpackage HTML
+ *
+ * @author Anders Lövgren (QNET/BMC CompDept)
+ */
+class FieldSet extends Container
+{
+
+        public function __construct()
+        {
+                parent::__construct("fieldset");
+        }
+
+        public function setLabel($text)
+        {
+                parent::addElement(new Legend($text));
+        }
+
+}
+
+/**
+ * This class represent a legend tag.
+ * 
+ * @package UserInterface
+ * @subpackage HTML
+ *
+ * @author Anders Lövgren (QNET/BMC CompDept)
+ */
+class Legend extends Container
+{
+
+        public function __construct($text)
+        {
+                parent::__construct("legend");
+                parent::setText($text);
         }
 
 }
