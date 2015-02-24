@@ -18,28 +18,24 @@
 
 namespace UUP\Html\Text;
 
-use UUP\Html\Base\Container;
-
 /**
- * The standard H1 to H6 header, implemented as text container.
+ * Represent an H1 element.
  *
  * @package UUP
  * @subpackage Html
  *
  * @author Anders Lövgren (QNET/BMC CompDept)
  */
-class Header extends Container
+class H1 extends Header
 {
 
         /**
          * Constructor.
-         * @param int $size The header size.
          * @param string $text The header text.
          */
-        public function __construct($size, $text)
+        public function __construct($text)
         {
-                parent::__construct(sprintf("h%d", $size));
-                parent::setText($text);
+                parent::__construct(1, $text);
         }
 
 }
