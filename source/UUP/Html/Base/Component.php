@@ -41,7 +41,7 @@ class Component extends Element
                 if (isset($this->label)) {
                         $this->label->output();
                 }
-                parent::output(ELEMENT_OUTPUT_COMPONENT);
+                parent::output(Element::OUTPUT_COMPONENT);
         }
 
         /**

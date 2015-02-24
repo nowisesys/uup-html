@@ -29,6 +29,13 @@ namespace UUP\Html\Base;
 class Element
 {
 
+        // 
+        // Output mode for HTML element:
+        // 
+        const OUTPUT_COMPONENT = 1;
+        const OUTPUT_CONTAINER_START = 2;
+        const OUTPUT_CONTAINER_END = 3;
+
         private $tag;                // The tag name (i.e. h2)
         private $class;              // The classname (CSS)
         private $id;                 // The unique ID (CSS)
@@ -130,14 +137,16 @@ class Element
         }
 
         /**
-         * Output this HTML element. See ELEMENT_OUTPUT_XXX
+         * Output this HTML element. See Element::OUTPUT_XXX
          *
          * @param int $mode
          */
-        protected function output($mode)
+        protected function output()
         {
-                if ($mode == ELEMENT_OUTPUT_CONTAINER_START ||
-                    $mode == ELEMENT_OUTPUT_COMPONENT) {
+                $mode = func_get_arg(0);
+                
+                if ($mode == Element::OUTPUT_CONTAINER_START ||
+                    $mode == Element::OUTPUT_COMPONENT) {
                         printf("<%s", $this->tag);
                         if (isset($this->class)) {
                                 printf(" class=\"%s\"", $this->class);
@@ -168,13 +177,13 @@ class Element
                                 printf(" title=\"%s\"", $this->title);
                         }
 
-                        if ($mode == ELEMENT_OUTPUT_COMPONENT) {
+                        if ($mode == Element::OUTPUT_COMPONENT) {
                                 printf("/>\n");
                         } else {
                                 printf(">");
                         }
                 }
-                if ($mode == ELEMENT_OUTPUT_CONTAINER_END) {
+                if ($mode == Element::OUTPUT_CONTAINER_END) {
                         printf("</%s>\n", $this->tag);
                 }
         }

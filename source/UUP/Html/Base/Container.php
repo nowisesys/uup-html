@@ -135,7 +135,7 @@ class Container extends Element
                 if (isset($this->label)) {
                         $this->label->output();
                 }
-                parent::output(ELEMENT_OUTPUT_CONTAINER_START);
+                parent::output(Element::OUTPUT_CONTAINER_START);
                 if (count($this->childs) > 1) {
                         printf("\n");
                 }
@@ -145,7 +145,7 @@ class Container extends Element
                 if (isset($this->cdata)) {
                         $this->cdata->output();
                 }
-                parent::output(ELEMENT_OUTPUT_CONTAINER_END);
+                parent::output(Element::OUTPUT_CONTAINER_END);
         }
 
 }

@@ -18,7 +18,7 @@
 
 namespace UUP\Html\Form;
 
-use UUP\Html\Base\Input;
+use UUP\Html\Base\Button;
 
 /**
  * An standard button for use in a form. This class maps to the button element.
@@ -29,7 +29,7 @@ use UUP\Html\Base\Input;
  * @author Anders Lövgren (QNET/BMC CompDept)
  * @see Form
  */
-class StandardButton extends Input
+class StandardButton extends Button
 {
 
         public function __construct($name = null, $label = null)

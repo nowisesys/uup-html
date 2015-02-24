@@ -18,10 +18,27 @@
 
 namespace UUP\Html\Form;
 
+use UUP\Html\Base\Button;
 use UUP\Html\Base\Container;
 use UUP\Html\Text\BR;
 use UUP\Html\Text\H4;
 use UUP\Html\Text\HR;
+
+//
+// Constants for the FORM action:
+//
+if (!defined('FORM_ACTION_GET')) {
+        define('FORM_ACTION_GET', 'GET');
+}
+if (!defined('FORM_ACTION_POST')) {
+        define('FORM_ACTION_POST', 'POST');
+}
+//
+// Allows easy switch between development and production mode:
+//
+if (!defined('FORM_ACTION_DEFAULT')) {
+        define('FORM_ACTION_DEFAULT', FORM_ACTION_GET);
+}
 
 /**
  * This class represent a HTML form.
@@ -233,18 +250,18 @@ class Form extends Container
         /**
          * Alternative function for adding a button to this form. Returns the
          * button object.
-         * @param string $type One of the BUTTON_XXX constants.
+         * @param string $type One of the Button::XXX constants.
          * @param string $label The button label.
          * @return SubmitButton|ResetButton|StandardButton
          */
-        public function addButton($type = BUTTON_SUBMIT, $label = null)
+        public function addButton($type = Button::SUBMIT, $label = null)
         {
                 switch ($type) {
-                        case BUTTON_SUBMIT:
+                        case Button::SUBMIT:
                                 return parent::addElement(new SubmitButton($type, $label));
-                        case BUTTON_RESET:
+                        case Button::RESET:
                                 return parent::addElement(new ResetButton($type, $label));
-                        case BUTTON_STANDARD:
+                        case Button::STANDARD:
                                 return parent::addElement(new StandardButton($type, $label));
                 }
         }

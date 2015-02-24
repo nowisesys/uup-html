@@ -94,11 +94,11 @@ use UUP\Html\Text\Paragraph;
 class MessageBox extends Container
 {
 
-        const hint = "hint";
-        const success = "success";
-        const information = "info";
-        const warning = "warn";
-        const error = "error";
+        const HINT = "hint";
+        const SUCCESS = "success";
+        const INFORMATION = "info";
+        const WARNING = "warn";
+        const ERROR = "error";
 
         private $type;
         private $icon;

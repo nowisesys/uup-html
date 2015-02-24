@@ -31,6 +31,47 @@ use UUP\Html\Base\Container;
 class Table extends Container
 {
 
+        // 
+        // Table frame attribute constants:
+        // 
+        const FRAME_VOID = "void";
+        const FRAME_ABOVE = "above";
+        const FRAME_BELOW = "below";
+        const FRAME_HSIDES = "hsides";
+        const FRAME_LHS = "lhs";
+        const FRAME_RHS = "rhs";
+        const FRAME_VSIDES = "vsides";
+        const FRAME_BOX = "box";
+        const FRAME_BORDER = "border";
+        // 
+        // Table rules attribute constants:
+        // 
+        const RULES_NONE = "none";
+        const RULES_GROUPS = "groups";
+        const RULES_ROWS = "rows";
+        const RULES_COLS = "cols";
+        const RULES_ALL = "all";
+        // 
+        // Constants for TBody and TableItem (base class of TableRow, TableHeader 
+        // and TableData) align and valign attributes:
+        // 
+        const ALIGN_RIGHT = "right";
+        const ALIGN_LEFT = "left";
+        const ALIGN_CENTER = "center";
+        const ALIGN_JUSTIFY = "justify";
+        const ALIGN_CHAR = "char";
+        const VALIGN_TOP = "top";
+        const VALIGN_MIDDLE = "middle";
+        const VALIGN_BOTTOM = "bottom";
+        const VALIGN_BASELINE = "baseline";
+        // 
+        // Constants for the scope attribute of TableCell:
+        // 
+        const SCOPE_COL = "col";
+        const SCOPE_ROW = "row";
+        const SCOPE_COLGROUP = "colgroup";
+        const SCOPE_ROWGROUP = "rowgroup";
+
         /**
          * Constructor.
          */

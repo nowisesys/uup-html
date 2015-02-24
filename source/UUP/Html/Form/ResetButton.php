@@ -18,7 +18,7 @@
 
 namespace UUP\Html\Form;
 
-use UUP\Html\Base\Input;
+use UUP\Html\Base\Button;
 
 /**
  * An reset button for an form object.
@@ -29,7 +29,7 @@ use UUP\Html\Base\Input;
  * @author Anders Lövgren (QNET/BMC CompDept)
  * @see Form
  */
-class ResetButton extends Input
+class ResetButton extends Button
 {
 
         /**

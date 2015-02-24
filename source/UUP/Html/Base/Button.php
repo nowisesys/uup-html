@@ -16,30 +16,32 @@
  * limitations under the License.
  */
 
-namespace UUP\Html\Form;
-
-use UUP\Html\Base\Button;
+namespace UUP\Html\Base;
 
 /**
- * An submit button for an form object.
- *
+ * Abstract button base class.
+ * 
+ * This class defines constants for button types.
+ * 
  * @package UUP
  * @subpackage Html
  *
  * @author Anders Lövgren (QNET/BMC CompDept)
- * @see Form
  */
-class SubmitButton extends Button
+abstract class Button extends Input
 {
 
         /**
-         * Constructor.
-         * @param string $name The button name.
-         * @param string $label The button label.
+         * Submit button.
          */
-        public function __construct($name = null, $label = null)
-        {
-                parent::__construct("submit", $name, $label);
-        }
+        const SUBMIT = "submit";
+        /**
+         * Reset button.
+         */
+        const RESET = "reset";
+        /**
+         * Standard button.
+         */
+        const STANDARD = "standard";
 
 }

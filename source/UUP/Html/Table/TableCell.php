@@ -42,7 +42,7 @@ abstract class TableCell extends TableItem
          * @param string $type The link type
          * @return Link
          */
-        public function setLink($str, $type = LINK_TYPE_HREF)
+        public function setLink($str, $type = Link::TYPE_HREF)
         {
                 return parent::setLink(new Link($type, $str));
         }
@@ -115,7 +115,7 @@ abstract class TableCell extends TableItem
          */
         public function setAnchor($str, $title)
         {
-                parent::setLink(new Link(LINK_TYPE_NAME, $str))->setTitle($title);
+                parent::setLink(new Link(Link::TYPE_NAME, $str))->setTitle($title);
         }
 
 }
