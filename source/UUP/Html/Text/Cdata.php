@@ -23,34 +23,43 @@ use UUP\Html\Link;
 /**
  * This class represent a block of text (CDATA).
  *
- * @package UUP
- * @subpackage Html
+ * @package UserInterface
+ * @subpackage HTML
  *
  * @author Anders Lövgren (QNET/BMC CompDept)
  */
 class Cdata
 {
 
+        const separator = ' ';
+
         private $text;
         private $link;
 
         /**
          * Constructor.
-         * @param string $text The text.
+         * @param string|array $text The text.
          */
         public function __construct($text)
         {
-                $this->text = $text;
+                self::addText($text);
         }
 
         /**
          * Append text.
-         * @param string $text The text to append.
+         * @param string|array $text The text to append.
          * @param string $space Add space between this text and previous.
          */
-        public function addText($text, $space = ' ')
+        public function addText($text, $space = self::separator)
         {
-                $this->text .= $space . $text;
+                if (isset($this->text)) {
+                        $this->text .= $space;
+                }
+                if (is_array($text)) {
+                        $this->text .= implode($space, $text);
+                } else {
+                        $this->text .= $text;
+                }
         }
 
         /**

@@ -65,7 +65,7 @@ class ImageButton extends Input
          */
         public function setAltText($text)
         {
-                parent::setAttr("alt", $alt);
+                parent::setAttr("alt", $text);
         }
 
 }

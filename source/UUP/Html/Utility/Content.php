@@ -64,24 +64,25 @@ class Content
 
         /**
          * Add a section of plain text.
-         * @param string $text The text.
+         * @param string|array $text The text.
          * @return Cdata
          */
         public function addText($text)
         {
                 return $this->addContent(new Cdata($text));
         }
-
+        
         /**
-         * Add an paragraph object.
-         * @param string $text The paragraph content.
+         * Add an paragraph object. The text argument might contain an array
+         * of string that's going to be concatenated.
+         * @param string|array $text The paragraph content.
          * @return Paragraph
          */
         public function addParagraph($text)
         {
                 return $this->addContent(new Paragraph($text));
         }
-
+        
         /**
          * Add an table object.
          * @return Table
