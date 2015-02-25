@@ -110,6 +110,10 @@ div.error {
 
         use UUP\Html\Utility\MessageBox;
 
+        // ========================================================
+        //  Message boxes in various styles.
+        // ========================================================
+        
         printf("<h4>Using MessageBox::show() without title:</h4>\n");
         MessageBox::show(MessageBox::HINT, "Hint message", null);
         MessageBox::show(MessageBox::INFORMATION, "Information message", null);

@@ -48,6 +48,10 @@ limitations under the License.
         use UUP\Html\Base\Event;
         use UUP\Html\Form\Form;
 
+        // ========================================================
+        //  Example on showing a HTML form.
+        // ========================================================
+        
         $domains = array(
                 'example1.com' => 'Domain1',
                 'example2.com' => 'Domain2',

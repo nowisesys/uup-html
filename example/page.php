@@ -38,6 +38,10 @@ limitations under the License.
         use UUP\Html\Table\Table;
         use UUP\Html\Text\Cdata;
         use UUP\Html\Text\H1;
+        
+        // ========================================================
+        //  Showing output from different HTML classes.
+        // ========================================================
 
         $stime = microtime(true);
 

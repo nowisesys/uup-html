@@ -25,6 +25,10 @@ limitations under the License.
         require_once __DIR__ . '/../vendor/autoload.php';
 
         use UUP\Html\Utility\Content;
+        
+        // ========================================================
+        //  Use generic content container.
+        // ========================================================
 
         $content = new Content();
         $content->addHeader("Header 1");
