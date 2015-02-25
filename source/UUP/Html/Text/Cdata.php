@@ -23,8 +23,8 @@ use UUP\Html\Link;
 /**
  * This class represent a block of text (CDATA).
  *
- * @package UserInterface
- * @subpackage HTML
+ * @package UUP
+ * @subpackage Html
  *
  * @author Anders Lövgren (QNET/BMC CompDept)
  */

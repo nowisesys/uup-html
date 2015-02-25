@@ -21,8 +21,8 @@ namespace UUP\Html;
 /**
  * This class represents an script element.
  *
- * @package UserInterface
- * @subpackage HTML
+ * @package UUP
+ * @subpackage Html
  *
  * @author Anders Lövgren (QNET/BMC CompDept)
  */
