@@ -78,14 +78,14 @@ if (!defined('MESSAGEBOX_TITLE_ERROR')) {
  * // Pass properties to constructor:
  * // 
  * $messagebox = new MessageBox(
- *     MessageBox::information,
+ *     MessageBox::INFORMATION,
  *     $text, $title, $icon);
  * $messagebox->display();
  *
  * // 
  * // Use static method:
  * // 
- * MessageBox::show(MessageBox::information, $text, $title, $icon);
+ * MessageBox::show(MessageBox::INFORMATION, $text, $title, $icon);
  * ?>
  * </code>
  *
@@ -110,10 +110,25 @@ if (!defined('MESSAGEBOX_TITLE_ERROR')) {
 class MessageBox extends Container
 {
 
+        /**
+         * Tool-tip style messagebox.
+         */
         const HINT = "hint";
+        /**
+         * Success style messagebox.
+         */
         const SUCCESS = "success";
+        /**
+         * Information style messagebox.
+         */
         const INFORMATION = "info";
+        /**
+         * Warning style messagebox.
+         */
         const WARNING = "warn";
+        /**
+         * Error style messagebox.
+         */
         const ERROR = "error";
 
         private $icon;
