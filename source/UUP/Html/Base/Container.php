@@ -118,11 +118,17 @@ class Container extends Element
 
         /**
          * Set the link object.
-         * @param Link $link The link object.
+         * 
+         * If link is a string, then a new link (href) is created.
+         * 
+         * @param Link|string $link The link object or string.
          * @return Link
          */
         public function setLink($link)
         {
+                if (is_string($link)) {
+                        $link = new Link(Link::TYPE_HREF, $link);
+                }
                 $this->cdata->setLink($link);
                 return $link;
         }

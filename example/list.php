@@ -25,6 +25,7 @@ limitations under the License.
         <?php
         require_once __DIR__ . '/../vendor/autoload.php';
 
+use UUP\Html\Link;
 use UUP\Html\Lists\DescriptionList;
 use UUP\Html\Lists\OrderedList;
 use UUP\Html\Lists\UnorderedList;
@@ -125,6 +126,20 @@ use UUP\Html\Text\BR;
         $o1 = $ul->addList($ol);
         $ol->setType(OrderedList::TYPE_DECIMAL);
         $ul->output();  // Should output two ordered list in decimal type.
+        
+        // 
+        // List with links:
+        // 
+        printf("<h4>List containing links:</h4>\n");        
+        $list = new UnorderedList();
+        $item = $list->addItem(_("RC2 - Release candidate 2"));
+        $item->setLink(new Link(Link::TYPE_HREF, "rc2"));       // Explicit created link
+        $item = $list->addItem(_("RC1 - Release candidate 1"));
+        $item->setLink(new Link(Link::TYPE_NAME, "rc1"));       // Anchor link
+        $item = $list->addItem(_("SVN - Development preview"));
+        $item->setLink("svn");                                  // Implicit created link
+        $list->output();
+        
         ?>
     </body>
 </html>
