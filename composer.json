@@ -1,6 +1,6 @@
 {
     "name": "bmc/uup-html",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Object oriented HTML class library.",
     "type": "library",
     "keywords": ["html", "ui", "uup", "bmc"],
