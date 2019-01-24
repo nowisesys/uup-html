@@ -1,15 +1,19 @@
 {
-    "name": "bmc/uup-html",
-    "version": "1.0.5",
+    "name": "nowise/uup-html",
+    "version": "1.0.6",
     "description": "Object oriented HTML class library.",
     "type": "library",
     "keywords": ["html", "ui", "uup", "bmc"],
-    "homepage": "http://it.bmc.uu.se/andlov/php/proj/bmc/uup-html",
+    "homepage": "https://nowise.se/oss/uup-html",
     "license": "Apache-2.0",
     "authors": [
         {
             "name": "Anders Lövgren",
             "email": "anders.lovgren@bmc.uu.se"
+        },
+        {
+            "name": "Anders Lövgren",
+            "email": "andlov@nowise.se"
         }
     ],
     "require": {
