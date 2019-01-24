@@ -29,7 +29,7 @@ use UUP\Html\Text\Cdata;
  * @package UUP
  * @subpackage Html
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see RadioButton
  * @see CheckBox
  */

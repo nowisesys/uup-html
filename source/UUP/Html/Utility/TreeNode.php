@@ -40,7 +40,7 @@ if (!defined('TREE_NODE_DATETIME_FORMAT')) {
 /**
  * Utility class for building trees.
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see TreeBuilder
  *
  * @package UUP

@@ -24,7 +24,7 @@ namespace UUP\Html;
  * @package UUP
  * @subpackage Html
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Script extends Container
 {

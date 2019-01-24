@@ -105,7 +105,7 @@ if (!defined('MESSAGEBOX_TITLE_ERROR')) {
  * @package UUP
  * @subpackage Html
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class MessageBox extends Container
 {

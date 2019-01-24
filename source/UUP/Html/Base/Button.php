@@ -26,7 +26,7 @@ namespace UUP\Html\Base;
  * @package UUP
  * @subpackage Html
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 abstract class Button extends Input
 {

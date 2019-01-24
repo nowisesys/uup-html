@@ -24,7 +24,7 @@ namespace UUP\Html\Text;
  * @package UUP
  * @subpackage Html
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class HR extends Cdata
 {

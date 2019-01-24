@@ -40,7 +40,7 @@ if (!defined('EVENT_HANDLER_CHECK_EMPTY')) {
  * @package UUP
  * @subpackage Html
  * 
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 abstract class Event
 {

@@ -24,7 +24,7 @@ use UUP\Html\Form\TextBox;
 /**
  * Decorates an textbox and password class.
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  *
  * @package UUP
  * @subpackage Html

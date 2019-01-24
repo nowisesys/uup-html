@@ -27,7 +27,7 @@ use UUP\Html\Form\Form;
  * @package UUP
  * @subpackage Html
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Form
  */
 abstract class Input extends Component

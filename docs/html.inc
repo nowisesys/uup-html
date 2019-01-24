@@ -85,7 +85,7 @@
  * }
  * </code>
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @package UserInterface
  * @subpackage HTML
  */
@@ -411,7 +411,7 @@ if (!defined('SCRIPT_TYPE_TEXT_ECMASCRIPT')) {          // Obsolete
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Element
 {
@@ -574,7 +574,7 @@ class Element
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Link extends Container
 {
@@ -681,7 +681,7 @@ class Link extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Cdata
 {
@@ -758,7 +758,7 @@ class Cdata
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class BR extends Cdata
 {
@@ -779,7 +779,7 @@ class BR extends Cdata
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class HR extends Cdata
 {
@@ -800,7 +800,7 @@ class HR extends Cdata
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Component extends Element
 {
@@ -839,7 +839,7 @@ class Component extends Element
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Container extends Element
 {
@@ -967,7 +967,7 @@ class Container extends Element
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Label extends Container
 {
@@ -1001,7 +1001,7 @@ class Label extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Header extends Container
 {
@@ -1025,7 +1025,7 @@ class Header extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class H1 extends Header
 {
@@ -1047,7 +1047,7 @@ class H1 extends Header
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class H2 extends Header
 {
@@ -1069,7 +1069,7 @@ class H2 extends Header
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class H3 extends Header
 {
@@ -1091,7 +1091,7 @@ class H3 extends Header
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class H4 extends Header
 {
@@ -1113,7 +1113,7 @@ class H4 extends Header
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class H5 extends Header
 {
@@ -1135,7 +1135,7 @@ class H5 extends Header
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class H6 extends Header
 {
@@ -1157,7 +1157,7 @@ class H6 extends Header
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Paragraph extends Container
 {
@@ -1180,7 +1180,7 @@ class Paragraph extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Image extends Component
 {
@@ -1241,7 +1241,7 @@ class Image extends Component
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Script extends Container
 {
@@ -1309,7 +1309,7 @@ class Script extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Option
  */
 class ComboBox extends Container
@@ -1372,7 +1372,7 @@ class ComboBox extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see ComboBox
  */
 class Option extends Container
@@ -1415,7 +1415,7 @@ class Option extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Form
  */
 abstract class Input extends Component
@@ -1455,7 +1455,7 @@ abstract class Input extends Component
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class HiddenField extends Input
 {
@@ -1475,7 +1475,7 @@ class HiddenField extends Input
 /**
  * Decorates an textbox and password class.
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  *
  * @package UserInterface
  * @subpackage HTML
@@ -1529,7 +1529,7 @@ abstract class TextInput extends Input
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see RadioButton
  * @see CheckBox
  */
@@ -1595,7 +1595,7 @@ abstract class OptionInput extends Input
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Form
  */
 class TextBox extends TextInput
@@ -1619,7 +1619,7 @@ class TextBox extends TextInput
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Form
  */
 class Password extends TextInput
@@ -1643,7 +1643,7 @@ class Password extends TextInput
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Form
  */
 class RadioButton extends OptionInput
@@ -1668,7 +1668,7 @@ class RadioButton extends OptionInput
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Form
  */
 class CheckBox extends OptionInput
@@ -1693,7 +1693,7 @@ class CheckBox extends OptionInput
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Form
  */
 class FileInput extends Input
@@ -1726,7 +1726,7 @@ class FileInput extends Input
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Form
  */
 class SubmitButton extends Input
@@ -1750,7 +1750,7 @@ class SubmitButton extends Input
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Form
  */
 class ResetButton extends Input
@@ -1774,7 +1774,7 @@ class ResetButton extends Input
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Form
  */
 class StandardButton extends Input
@@ -1793,7 +1793,7 @@ class StandardButton extends Input
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Form
  */
 class ImageButton extends Input
@@ -1844,7 +1844,7 @@ class ImageButton extends Input
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @see Form
  */
 class TextArea extends Container
@@ -1911,7 +1911,7 @@ class TextArea extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Form extends Container
 {
@@ -2154,7 +2154,7 @@ class Form extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Table extends Container
 {
@@ -2268,7 +2268,7 @@ class Table extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 abstract class TableItem extends Container
 {
@@ -2323,7 +2323,7 @@ abstract class TableItem extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class TableRow extends TableItem
 {
@@ -2368,7 +2368,7 @@ class TableRow extends TableItem
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 abstract class TableCell extends TableItem
 {
@@ -2465,7 +2465,7 @@ abstract class TableCell extends TableItem
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class TableHeader extends TableCell
 {
@@ -2484,7 +2484,7 @@ class TableHeader extends TableCell
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class TableData extends TableCell
 {
@@ -2531,7 +2531,7 @@ class TableData extends TableCell
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 abstract class TContainer extends Container
 {
@@ -2553,7 +2553,7 @@ abstract class TContainer extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class THead extends TContainer
 {
@@ -2571,7 +2571,7 @@ class THead extends TContainer
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class TFoot extends TContainer
 {
@@ -2589,7 +2589,7 @@ class TFoot extends TContainer
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class TBody extends TContainer
 {
@@ -2650,7 +2650,7 @@ class TBody extends TContainer
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Content
 {
@@ -2791,7 +2791,7 @@ class Content
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class MessageBox extends Container
 {
@@ -2930,7 +2930,7 @@ class MessageBox extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Div extends Container
 {
@@ -2948,7 +2948,7 @@ class Div extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Span extends Container
 {
@@ -2966,7 +2966,7 @@ class Span extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Pre extends Container
 {
@@ -2984,7 +2984,7 @@ class Pre extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Code extends Container
 {
@@ -3002,7 +3002,7 @@ class Code extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class FieldSet extends Container
 {
@@ -3025,7 +3025,7 @@ class FieldSet extends Container
  * @package UserInterface
  * @subpackage HTML
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Legend extends Container
 {

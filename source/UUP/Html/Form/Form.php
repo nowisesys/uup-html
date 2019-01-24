@@ -65,7 +65,7 @@ if (!defined('FORM_ACTION_DEFAULT')) {
  * @package UUP
  * @subpackage Html
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 class Form extends Container
 {

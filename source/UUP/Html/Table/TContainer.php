@@ -30,7 +30,7 @@ use UUP\Html\Base\Container;
  * @package UUP
  * @subpackage Html
  *
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  */
 abstract class TContainer extends Container
 {
