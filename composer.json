@@ -1,10 +1,10 @@
 {
     "name": "nowise/uup-html",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Object oriented HTML class library.",
     "type": "library",
     "keywords": ["html", "ui", "uup", "bmc"],
-    "homepage": "https://nowise.se/oss/uup-html",
+    "homepage": "https://nowise.se/oss/uup/html",
     "license": "Apache-2.0",
     "authors": [
         {

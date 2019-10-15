@@ -56,5 +56,5 @@ $textbox->setEvent(Event::ON_DOUBLE_CLICK, EVENT_HANDLER_CLEAR_CONTENT);
 
 ### More
 
-Visit the [project page](https://nowise.se/oss/uup-html) for more information.
+Visit the [project page](https://nowise.se/oss/uup/html) for more information.
 
